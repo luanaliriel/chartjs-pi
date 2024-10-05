@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <title>Exercício de PI | ChartJS</title>
+</head>
+
+<body style="display: flex;">
+
+    <div>
+        <canvas id="chartJS" style="position: relative; height:40vh; width:50vw"></canvas>
+    </div>
+
+
+    <div>
+        <canvas id="chartJS2" style="position: relative; height:40vh; width:50vw"></canvas>
+    </div>
+</body>
+<script>
+    const meuchart = document.getElementById('chartJS')
+    const meuchart2 = document.getElementById('chartJS2')
+
+    const labelschart = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+    ]
+
+    const data = {
+        labels: labelschart,
+        datasets: [{
+            label: `Temperatura`,
+            backgroundColor: `rgb(255, 182, 193)`,
+            borderColor: `rgb(255, 182, 193)`,
+            data: [30, 29, 28, 25, 22, 23]
+        },
+        {
+            label: `Umidade`,
+            backgroundColor: `rgb(0, 0, 255)`,
+            borderColor: `rgb(0, 0, 255)`,
+            data: [80, 82, 80, 85, 80, 83]
+        }]
+    }
+    const config = {
+        type: `line`,
+        data: data,
+        options: {}
+    }
+
+
+
+    // gráfico 2
+
+    const labelschart2 = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+    ]
+
+    const data2 = {
+        labels: labelschart2,
+        datasets: [{
+            label: `Temperatura média`,
+            backgroundColor: `rgb(255, 182, 193)`,
+            borderColor: `rgb(255, 182, 193)`,
+            data: [22, 24, 27, 23, 20, 18]
+        },
+        {
+            label: `Umidade média`,
+            backgroundColor: `rgb(0, 0, 255)`,
+            borderColor: `rgb(0, 0, 255)`,
+            data: [90, 89, 93, 87, 88, 82]
+        }
+    ]
+    }
+    const config2 = {
+        type: `bar`,
+        data: data2,
+        options: {}
+    }
+
+    // criando os gráficos com as variáveis que dei 
+
+    const chart1 = new Chart(
+        meuchart, config)
+    const chart2 = new Chart(
+        meuchart2, config2)
+
+</script>
+
+</html>
